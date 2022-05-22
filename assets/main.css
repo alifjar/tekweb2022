@@ -1,0 +1,13 @@
+.card {
+    border-radius: 0;
+    border: none;
+}
+
+.cad {
+    border: solid 1px var(--bs-pink);
+
+}
+
+.card-img-top {
+    border-radius: 0;
+}
