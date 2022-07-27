@@ -1,0 +1,229 @@
+BERIKUT INI ERUPAKAN SEBUAH DESAIND ARI DATABASE DAN JUGA API YANG SUDAH SAYA BUAT
+
+A. Users
+
+-Menampilkan user
+GET: /users
+response:
+[
+  {
+    "id":"",
+    "nama":"",	
+    "role":"",
+    "des":""
+  },
+    ...
+]
+
+
+-Menampilkan user with ID
+GET: /users/[id]
+reponse:
+{
+  "id":"",
+  "nama":"",	
+  "role":"",
+  "des":""
+}
+
+
+-Menambahkan user
+POST: /user
+data:
+{
+  "nama":"",	
+  "role":"",
+  "des":""
+}
+response:
+true    // if success
+false   // if failure
+
+
+-Mengedit user with ID
+PUT: /user/[id]
+data:
+{
+  "nama":"",	
+  "role":"",
+  "des":""
+}
+response:
+true    // if success
+false   // if failure
+
+
+-Menghapus user with ID
+DELETE: /user/[id]
+response:
+true    // if success
+false   // if failure
+
+
+
+
+B. Artikel
+   
+-Menampilkan semua artikel
+GET: /artikels
+response:
+[
+  {
+    "id":"",
+    "gambar":"",
+    "judul":"",
+    "sumber":"",
+    "des":"",
+    "artikel":""
+  },
+    ...
+]
+
+
+-Menampilkan artikel with ID
+GET: /artikels/[id]
+response:
+{
+  "id":"",
+  "gambar":"",
+  "judul":"",
+  "sumber":"",
+  "des":"",
+  "artikel":""
+}
+
+
+-Menambahkan artikel
+POST: /artikel
+data:
+{
+  "gambar":"",
+  "judul":"",
+  "sumber":"",
+  "des":"",
+  "artikel":""
+}
+response:
+true    // if success
+false   // if failure
+
+
+-Mengupdate artikel with ID
+PUT: /artikel/[id]
+data:
+{
+  "gambar":"",
+  "judul":"",
+  "sumber":"",
+  "des":"",
+  "artikel":""
+}
+response:
+true    // if success
+false   // if failure
+
+
+-Menghapus artikel with ID
+DELETE: /artikel/[id]
+response:
+true    // if success
+false   // if failure
+
+
+
+C. Keterampilan
+
+-Menampilkan semua Keterampilan
+GET: /keters
+response:
+[
+  {
+    "id":"",
+    "ketera":"",
+    "skill":""
+  },
+  ...
+]
+
+
+-Menampilkan Keterampilan with ID
+GET: /keters/[id]
+response:
+{
+  "id":"",
+  "ketera":"",
+  "skill":""
+}
+
+
+-Menambahkan Keterampilan
+POST: /keter
+data:
+{
+  "ketera":"",
+  "skill":""
+}
+response:
+true    // if success
+false   // if failure
+
+
+-Memperbarui Keterampilan
+PUT: /keter/[id]
+data:
+{
+  "ketera":"",
+  "skill":""
+}
+response:
+true    // if success
+false   // if failure
+
+
+-Menghapus Keterampilan 
+DELETE: /keter/[id]
+response:
+true    // if success
+false   // if failure
+
+
+
+C. Desain Database
+Desain database dari API Point yang telah saya buat adalah sebagai berikut:
+
+mermaid
+classDiagram
+    class User{
+        # id: int
+        + nama: string
+        + role: string
+        + des: string
+        + getAllUser()
+        + getUserById()
+        + updateUser()
+        + createUser()
+        + deleteUser()
+    },
+    class Keterampilan{
+        # id: int
+        + ketera: string
+        + skill: string
+        + getAllKeter()
+        + getKeterById()
+        + updateKeter()
+        + createKeter()
+        + deleteKeter()
+    },
+    class Artikel{
+        # id: int
+        + gambar: string
+        + judul: string
+        + des: string
+        + sumber: string
+        + artikel: string
+        + getAllArtikel()
+        + getArtikelById()
+        + updateArtikel()
+        + createArtikel()
+        + deleteArtikel()
+    }
