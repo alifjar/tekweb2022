@@ -24,8 +24,8 @@
   <main class="content-wrapper">
     <header class="white-text-container section-container">
       <div class="text-center">
-        <h1>{{nama}}</h1>
-        <p>{{desc}}</p>
+        <h1>{{user[0].nama}}</h1>
+        <p>{{user[0].role}}</p>
         <p>
           <a class="fa-icon fa-icon-2x" href="" title="">
             <i class="fa fa-facebook"></i>
@@ -61,7 +61,7 @@
                 </div>
                 <div class="col-md-8">
 
-                  <p>{{about_desc}}</p>
+                  <p>{{user[0].des}}</p>
 
                 </div>
               </div>
@@ -114,9 +114,9 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr v-for="(data,a) in table_data">
+                      <tr v-for="(data,a) in keterampilan">
                         <td style="width: 13px;" scope="row">{{a+1}}</td>
-                        <td scope="row">{{data.keter}}</td>
+                        <td scope="row">{{data.ketera}}</td>
                         <td scope="row">{{data.skill}}</td>
                       </tr>
                     </tbody>
@@ -134,12 +134,12 @@
 
                 <div v-for="data in artikel" class="col-md-6">
                   <div class="cad card">
-                    <img :src="data.img" class="card-img-top p-3" alt="...">
+                    <img :src="data.gambar" class="card-img-top p-3" alt="...">
                     <div class="card-body">
                       <h5 class="card-title">{{data.judul}}</h5>
-                      <p class="card-text fst-italic">Oleh: {{data.penulis}}</p>
-                      <p class="card-text">{{data.deskripsi}}</p>
-                      <a :href="'./read.html?article='+data.artikel" type="button" class="btn btn-primary">Baca</a>
+                      <p class="card-text fst-italic">Oleh: {{data.sumber}}</p>
+                      <p class="card-text">{{data.des}}</p>
+                      <a :href="'./read.html?article='+data.artikel" class="btn btn-primary">Baca</a>
                     </div>
                   </div>
                 </div>

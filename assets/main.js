@@ -1,3 +1,4 @@
+let api="https://aliffajar.my.id/index.php/";
 Vue.createApp({
     data() {
         return {
@@ -76,6 +77,8 @@ Vue.createApp({
             ],
 
             artikel: [],
+            user: [],
+            keterampilan: [],
             article: null,
 
         };
@@ -84,11 +87,37 @@ Vue.createApp({
         getArticle() {
             axios
                 .get(
-                    "https://raw.githubusercontent.com/alifjar/tekweb2022/main/content/artikel.json"
+                    api+"artikels"
                 )
                 .then((res) => {
                     console.log(res.data);
                     this.artikel = res.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+        getUser() {
+            axios
+                .get(
+                    api+"users"
+                )
+                .then((res) => {
+                    console.log(res.data);
+                    this.user = res.data;
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
+        },
+        getKeterampilan() {
+            axios
+                .get(
+                    api+"keters"
+                )
+                .then((res) => {
+                    console.log(res.data);
+                    this.keterampilan = res.data;
                 })
                 .catch((error) => {
                     console.log(error);
@@ -102,7 +131,7 @@ Vue.createApp({
             console.log(article);
             axios
                 .get(
-                    "https://raw.githubusercontent.com/alifjar/tekweb2022/main/content/" + article
+                    src = "./content/" + article
                 )
                 .then((res) => {
                     var html = converter.makeHtml(res.data);
@@ -116,6 +145,8 @@ Vue.createApp({
     },
     beforeMount() {
         this.getArticle(),
+        this.getKeterampilan(),
+        this.getUser(),
         this.getDataMarkdown()
     },
 }).mount("#app");
