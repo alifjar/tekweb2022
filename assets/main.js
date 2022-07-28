@@ -131,7 +131,7 @@ Vue.createApp({
             console.log(article);
             axios
                 .get(
-                    "https://raw.githubusercontent.com/alifjar/tekweb2022/main/content/" + article
+                    src="content/" + article
                 )
                 .then((res) => {
                     var html = converter.makeHtml(res.data);
